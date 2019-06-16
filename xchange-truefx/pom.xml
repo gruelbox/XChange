@@ -3,15 +3,15 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.gruelbox</groupId>
+		<groupId>org.knowm.xchange</groupId>
 		<artifactId>xchange-parent</artifactId>
-		<version>4.3.18.1-SNAPSHOT</version>
+		<version>4.3.20-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>xchange-truefx</artifactId>
 
-	<name>Orko XChange Fork - Bitcoin Core</name>
-	<description>Development fork. Not for general use.</description>
+	<name>XChange Bitcoin Core</name>
+	<description>XChange implementation for TrueFX</description>
 
 	<url>http://knowm.org/open-source/xchange/</url>
 	<inceptionYear>2012</inceptionYear>
@@ -25,7 +25,7 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>com.gruelbox</groupId>
+			<groupId>org.knowm.xchange</groupId>
 			<artifactId>xchange-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>

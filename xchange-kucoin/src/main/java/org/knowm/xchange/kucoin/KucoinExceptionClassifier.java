@@ -1,7 +1,6 @@
 package org.knowm.xchange.kucoin;
 
 import java.io.IOException;
-
 import org.knowm.xchange.exceptions.ExchangeException;
 import org.knowm.xchange.exceptions.ExchangeSecurityException;
 import org.knowm.xchange.exceptions.ExchangeUnavailableException;

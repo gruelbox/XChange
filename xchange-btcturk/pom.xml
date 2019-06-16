@@ -2,15 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>xchange-parent</artifactId>
-        <groupId>com.gruelbox</groupId>
-        <version>4.3.18.1-SNAPSHOT</version>
+        <groupId>org.knowm.xchange</groupId>
+        <version>4.3.20-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>xchange-btcturk</artifactId>
 
-    <name>Orko XChange Fork - BTC Turk</name>
-    <description>Development fork. Not for general use.</description>
+    <name>XChange BTC Turk</name>
+    <description>XChange implementation for the BTC Turk Exchange</description>
     <url>http://knowm.org/open-source/xchange/</url>
     <inceptionYear>2012</inceptionYear>
 
@@ -33,7 +33,7 @@
     <!-- Parent provides default configuration for dependencies -->
     <dependencies>
         <dependency>
-            <groupId>com.gruelbox</groupId>
+            <groupId>org.knowm.xchange</groupId>
             <artifactId>xchange-core</artifactId>
             <version>${project.version}</version>
         </dependency>

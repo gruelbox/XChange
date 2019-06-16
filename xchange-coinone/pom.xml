@@ -3,15 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.gruelbox</groupId>
+        <groupId>org.knowm.xchange</groupId>
         <artifactId>xchange-parent</artifactId>
-        <version>4.3.18.1-SNAPSHOT</version>
+        <version>4.3.20-SNAPSHOT</version>
     </parent>
 
     <artifactId>xchange-coinone</artifactId>
 
-    <name>Orko XChange Fork - CoinOne</name>
-    <description>Development fork. Not for general use.</description>
+    <name>XChange CoinOne</name>
+    <description>XChange implementation for CoinOne</description>
 
     <url>http://knowm.org/open-source/xchange/</url>
     <inceptionYear>2012</inceptionYear>

@@ -5,23 +5,23 @@
 
     <parent>
         <artifactId>xchange-parent</artifactId>
-        <groupId>com.gruelbox</groupId>
-        <version>4.3.18.1-SNAPSHOT</version>
+        <groupId>org.knowm.xchange</groupId>
+        <version>4.3.20-SNAPSHOT</version>
     </parent>
 
     <artifactId>xchange-fcoin</artifactId>
 
-    <name>Orko XChange Fork - FCoin</name>
-    <description>Development fork. Not for general use.</description>
+    <name>XChange FCoin</name>
+    <description>XChange implementations for the FCoin Exchange.</description>
 
     <!-- Parent provides default configuration for dependencies -->
     <dependencies>
 
         <!-- Project dependencies (version automatically set through parent) -->
         <dependency>
-            <groupId>com.gruelbox</groupId>
+            <groupId>org.knowm.xchange</groupId>
             <artifactId>xchange-core</artifactId>
-            <version>4.3.18.1-SNAPSHOT</version>
+            <version>4.3.20-SNAPSHOT</version>
         </dependency>
 
         <dependency>

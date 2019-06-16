@@ -25,7 +25,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.gruelbox</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>xchange-core</artifactId>
             <version>${project.version}</version>
         </dependency>

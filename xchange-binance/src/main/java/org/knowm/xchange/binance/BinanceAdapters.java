@@ -131,18 +131,19 @@ public class BinanceAdapters {
         || order.type.equals(org.knowm.xchange.binance.dto.trade.OrderType.MARKET)) {
       averagePrice = BigDecimal.ZERO;
     } else {
-      if (order.cummulativeQuoteQty == null ||
-          order.cummulativeQuoteQty.compareTo(ZERO) < 0 ||
-          order.executedQty.compareTo(ZERO) == 0) {
+      if (order.cummulativeQuoteQty == null
+          || order.cummulativeQuoteQty.compareTo(ZERO) < 0
+          || order.executedQty.compareTo(ZERO) == 0) {
         averagePrice = order.price;
       } else {
         // This is how Binance advises deriving the average price.
         // Regarding the scale, we just avoid adding digits and
         // round to get there.
-        averagePrice = order.cummulativeQuoteQty.divide(
-            order.executedQty,
-            Math.max(order.cummulativeQuoteQty.scale(), order.executedQty.scale()),
-            RoundingMode.HALF_UP);
+        averagePrice =
+            order.cummulativeQuoteQty.divide(
+                order.executedQty,
+                Math.max(order.cummulativeQuoteQty.scale(), order.executedQty.scale()),
+                RoundingMode.HALF_UP);
       }
     }
 

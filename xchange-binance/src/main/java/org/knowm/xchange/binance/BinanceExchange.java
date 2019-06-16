@@ -6,9 +6,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
 import org.knowm.xchange.BaseExchange;
 import org.knowm.xchange.ExchangeSpecification;
+import org.knowm.xchange.binance.dto.account.AssetDetail;
 import org.knowm.xchange.binance.dto.meta.exchangeinfo.BinanceExchangeInfo;
 import org.knowm.xchange.binance.dto.meta.exchangeinfo.Filter;
 import org.knowm.xchange.binance.dto.meta.exchangeinfo.Symbol;
@@ -23,15 +23,12 @@ import org.knowm.xchange.exceptions.ExchangeException;
 import org.knowm.xchange.utils.AuthUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import si.mazi.rescu.RestProxyFactory;
 import si.mazi.rescu.SynchronizedValueFactory;
 
 public class BinanceExchange extends BaseExchange {
 
   private static final Logger LOG = LoggerFactory.getLogger(BinanceExchange.class);
-
-  private static final int DEFAULT_PRECISION = 8;
 
   private BinanceExchangeInfo exchangeInfo;
   private Long deltaServerTimeExpire;
@@ -82,6 +79,8 @@ public class BinanceExchange extends BaseExchange {
       exchangeInfo = marketDataService.getExchangeInfo();
       Symbol[] symbols = exchangeInfo.getSymbols();
 
+      BinanceAccountService accountService = (BinanceAccountService) getAccountService();
+      Map<String, AssetDetail> assetDetailMap = accountService.getAssetDetails();
       for (Symbol symbol : symbols) {
         if (!symbol.getStatus().equals("BREAK")) { // Symbols with status "BREAK" are delisted
           int basePrecision = Integer.parseInt(symbol.getBaseAssetPrecision());
@@ -115,29 +114,39 @@ public class BinanceExchange extends BaseExchange {
                   new BigDecimal("0.1"), // Trading fee at Binance is 0.1 %
                   minQty, // Min amount
                   maxQty, // Max amount
-                  pairPrecision, // precision
+                  amountPrecision, // base precision
+                  pairPrecision, // counter precision
                   null, /* TODO get fee tiers, although this is not necessary now
                         because their API returns current fee directly */
-                  stepSize));
+                  stepSize,
+                  null));
+
+          Currency baseCurrency = currentCurrencyPair.base;
+          BigDecimal baseWithdrawalFee = getWithdrawalFee(currencies, baseCurrency, assetDetailMap);
+          currencies.put(baseCurrency, new CurrencyMetaData(basePrecision, baseWithdrawalFee));
+
+          Currency counterCurrency = currentCurrencyPair.counter;
+          BigDecimal counterWithdrawalFee =
+              getWithdrawalFee(currencies, counterCurrency, assetDetailMap);
           currencies.put(
-              new Currency(symbol.getBaseAsset()),
-              new CurrencyMetaData(
-                  basePrecision,
-                  currencies.containsKey(currentCurrencyPair.base)
-                      ? currencies.get(currentCurrencyPair.base).getWithdrawalFee()
-                      : null));
-          currencies.put(
-              new Currency(symbol.getQuoteAsset()),
-              new CurrencyMetaData(
-                  counterPrecision,
-                  currencies.containsKey(currentCurrencyPair.counter)
-                      ? currencies.get(currentCurrencyPair.counter).getWithdrawalFee()
-                      : null));
+              counterCurrency, new CurrencyMetaData(counterPrecision, counterWithdrawalFee));
         }
       }
     } catch (Exception e) {
       throw new ExchangeException("Failed to initialize: " + e.getMessage(), e);
     }
+  }
+
+  private BigDecimal getWithdrawalFee(
+      Map<Currency, CurrencyMetaData> currencies,
+      Currency currency,
+      Map<String, AssetDetail> assetDetailMap) {
+    if (assetDetailMap != null) {
+      AssetDetail asset = assetDetailMap.get(currency.getCurrencyCode());
+      return asset != null ? asset.getWithdrawFee().stripTrailingZeros() : null;
+    }
+
+    return currencies.containsKey(currency) ? currencies.get(currency).getWithdrawalFee() : null;
   }
 
   private int numberOfDecimals(String value) {

@@ -1,11 +1,9 @@
 package org.knowm.xchange.binance.dto.trade;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 import java.util.Date;
-
 import javax.annotation.Nullable;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 public final class BinanceOrder {
 

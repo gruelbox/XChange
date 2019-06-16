@@ -2,13 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.gruelbox</groupId>
+        <groupId>org.knowm.xchange</groupId>
         <artifactId>xchange-parent</artifactId>
-        <version>4.3.18.1-SNAPSHOT</version>
+        <version>4.3.20-SNAPSHOT</version>
     </parent>
     <artifactId>xchange-ccex</artifactId>
-    <name>Orko XChange Fork - C-Cex</name>
-    <description>Development fork. Not for general use.</description>
+    <name>XChange C-Cex</name>
+    <description>XChange implementation for the C-CEX.com - Crypto-currency exchange / MultiWallet</description>
 
     <url>http://knowm.org/open-source/xchange/</url>
     <inceptionYear>2012</inceptionYear>
@@ -22,7 +22,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.gruelbox</groupId>
+            <groupId>org.knowm.xchange</groupId>
             <artifactId>xchange-core</artifactId>
             <version>${project.version}</version>
         </dependency>

@@ -45,7 +45,7 @@
         <version.reflections>0.9.11</version.reflections>
         <version.slf4j>1.8.0-beta4</version.slf4j>
         <version.crypto>4.2.0</version.crypto>
-        <version.java-jwt>3.8.0</version.java-jwt>
+        <version.java-jwt>3.8.1</version.java-jwt>
 
         <skipIntegrationTests>true</skipIntegrationTests>
     </properties>
@@ -158,6 +158,7 @@
         <module>xchange-cryptonit</module>
         <module>xchange-cryptopia</module>
         <module>xchange-coinsuper</module>
+        <module>xchange-deribit</module>
         <module>xchange-dsx</module>
         <module>xchange-dragonex</module>
         <module>xchange-dvchain</module>
@@ -165,7 +166,6 @@
         <module>xchange-exx</module>
         <module>xchange-examples</module>
         <module>xchange-fcoin</module>
-        <module>xchange-gatecoin</module>
         <module>xchange-gateio</module>
         <module>xchange-globitex</module>
         <module>xchange-gemini</module>
@@ -429,6 +429,7 @@
 				<module>xchange-cryptonit</module>
 				<module>xchange-cryptopia</module>
 				<module>xchange-coinsuper</module>
+                <module>xchange-deribit</module>
 				<module>xchange-dsx</module>
 				<module>xchange-dragonex</module>
 				<module>xchange-dvchain</module>

@@ -2,15 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>xchange-parent</artifactId>
-        <groupId>com.gruelbox</groupId>
-        <version>4.3.18.1-SNAPSHOT</version>
+        <groupId>org.knowm.xchange</groupId>
+        <version>4.3.20-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>xchange-lykke</artifactId>
 
-    <name>Orko XChange Fork - Lykke</name>
-    <description>Development fork. Not for general use.</description>
+    <name>XChange Lykke</name>
+    <description>XChange implementation for the Lykke Exchange</description>
 
     <url>http://knowm.org/open-source/xchange/</url>
     <inceptionYear>2012</inceptionYear>
@@ -23,9 +23,9 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.gruelbox</groupId>
+            <groupId>org.knowm.xchange</groupId>
             <artifactId>xchange-core</artifactId>
-            <version>4.3.18.1-SNAPSHOT</version>
+            <version>4.3.20-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

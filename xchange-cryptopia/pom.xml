@@ -5,14 +5,14 @@
 
     <parent>
         <artifactId>xchange-parent</artifactId>
-        <groupId>com.gruelbox</groupId>
-        <version>4.3.18.1-SNAPSHOT</version>
+        <groupId>org.knowm.xchange</groupId>
+        <version>4.3.20-SNAPSHOT</version>
     </parent>
 
     <artifactId>xchange-cryptopia</artifactId>
 
-    <name>Orko XChange Fork - Cryptopia</name>
-    <description>Development fork. Not for general use.</description>
+    <name>XChange Cryptopia</name>
+    <description>XChange implementation for Cryptopia</description>
 
     <url>http://knowm.org/open-source/xchange/</url>
     <inceptionYear>2012</inceptionYear>
