@@ -4,6 +4,7 @@ install: true
 notifications:
   slack: gruelbox:KxlNRVRsbXFQkO94YtHSdAmS
 jdk: oraclejdk8
+dist: trusty
 jobs:
   include:
     - if: (repo = gruelbox/XChange) AND (branch = orko OR tag IS present) AND (NOT type = pull_request)
