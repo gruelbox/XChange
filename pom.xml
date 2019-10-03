@@ -9,7 +9,7 @@
 
 	<groupId>com.gruelbox</groupId>
     <artifactId>xchange-parent</artifactId>
-	<version>4.3.19.3-SNAPSHOT</version>
+	<version>4.3.20</version>
     <packaging>pom</packaging>
 
 	<name>Orko XChange Fork</name>
@@ -281,7 +281,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>27.1-jre</version>
+                <version>28.0-jre</version>
             </dependency>
 
             <dependency>
@@ -523,7 +523,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.1.0</version>
+                        <version>3.1.1</version>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -599,7 +599,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>3.1.1</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
