@@ -3,7 +3,6 @@ package org.knowm.xchange.binance.dto.trade;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 import java.util.Date;
-import javax.annotation.Nullable;
 
 public final class BinanceOrder {
 
@@ -29,7 +28,7 @@ public final class BinanceOrder {
       @JsonProperty("price") BigDecimal price,
       @JsonProperty("origQty") BigDecimal origQty,
       @JsonProperty("executedQty") BigDecimal executedQty,
-      @JsonProperty("cummulativeQuoteQty") @Nullable BigDecimal cummulativeQuoteQty,
+      @JsonProperty("cummulativeQuoteQty") BigDecimal cummulativeQuoteQty,
       @JsonProperty("status") OrderStatus status,
       @JsonProperty("timeInForce") TimeInForce timeInForce,
       @JsonProperty("type") OrderType type,
