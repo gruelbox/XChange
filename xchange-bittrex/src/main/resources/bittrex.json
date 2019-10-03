@@ -750,9 +750,9 @@
   },
   "public_rate_limits": [
     {
-      "calls": 30,
+      "calls": 3,
       "time_span": 1,
-      "time_unit": "MINUTES"
+      "time_unit": "SECONDS"
     }
   ]
 }
